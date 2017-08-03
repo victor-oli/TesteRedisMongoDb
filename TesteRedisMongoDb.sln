@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRedisMongoDb.Ui", "TesteRedisMongoDb.Ui\TesteRedisMongoDb.Ui.csproj", "{C8B7D9BD-4C3C-413D-A40B-30F6A472E87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRedisMongoDb.Mongo", "TesteRedisMongoDb.Mongo\TesteRedisMongoDb.Mongo.csproj", "{AB420F69-5B2B-4460-96F7-2C5D6A11E560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRedisMongoDb.Redis", "TesteRedisMongoDb.Redis\TesteRedisMongoDb.Redis.csproj", "{27640D23-0CC2-4357-AD3A-0D8535B38022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8B7D9BD-4C3C-413D-A40B-30F6A472E87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B7D9BD-4C3C-413D-A40B-30F6A472E87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B7D9BD-4C3C-413D-A40B-30F6A472E87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B7D9BD-4C3C-413D-A40B-30F6A472E87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB420F69-5B2B-4460-96F7-2C5D6A11E560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB420F69-5B2B-4460-96F7-2C5D6A11E560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB420F69-5B2B-4460-96F7-2C5D6A11E560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB420F69-5B2B-4460-96F7-2C5D6A11E560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27640D23-0CC2-4357-AD3A-0D8535B38022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27640D23-0CC2-4357-AD3A-0D8535B38022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27640D23-0CC2-4357-AD3A-0D8535B38022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27640D23-0CC2-4357-AD3A-0D8535B38022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

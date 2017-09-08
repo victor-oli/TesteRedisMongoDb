@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
 using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using System.Linq;
 using TesteRedisMongoDb.Mongo;
 using TesteRedisMongoDb.Redis;
@@ -11,6 +12,9 @@ namespace TesteRedisMongoDb.Ui
     {
         static void Main(string[] args)
         {
+            MongoManager.Config(ConfigurationManager.AppSettings["MongoDbConnection"].ToString(),
+                ConfigurationManager.AppSettings["MongoDbName"].ToString());
+
             while (true)
             {
                 Console.Write("Digite (B) para buscar e (C) para cadastrar: ");
@@ -71,7 +75,7 @@ namespace TesteRedisMongoDb.Ui
 
         private static void CadastrarProduto(string nome, decimal valor)
         {
-            IMongoCollection<Produto> collection = new MongoManager<Produto>().open("Produto");
+            IMongoCollection<Produto> collection = MongoManager.open<Produto>("Produto");
             Produto produto = new Produto
             {
                 Nome = nome,
@@ -96,7 +100,7 @@ namespace TesteRedisMongoDb.Ui
 
             if (produtoNaMemoria == null)
             {
-                IMongoCollection<Produto> collection = new MongoManager<Produto>().open("Produto");
+                IMongoCollection<Produto> collection = MongoManager.open<Produto>("Produto");
                 Produto produto = collection.Find(x => x.Nome.Equals(nome)).FirstOrDefault();
 
                 if (produto == null)

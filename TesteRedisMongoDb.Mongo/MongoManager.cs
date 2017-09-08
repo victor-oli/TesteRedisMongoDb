@@ -1,21 +1,26 @@
-﻿using System.Configuration;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 
 namespace TesteRedisMongoDb.Mongo
 {
-	public class MongoManager<T> where T : class
-	{
-		private IMongoClient _client;
-		private IMongoDatabase _db;
-		private IMongoCollection<T> _collection;
+    public static class MongoManager
+    {
+        private static string mongoDbConnection;
+        private static string mongoDbName;
+        private static IMongoClient _client;
+        private static IMongoDatabase _db;
 
-		public IMongoCollection<T> open(string collectionName)
-		{
-			_client = new MongoClient(ConfigurationManager.AppSettings["MongoDbConnection"].ToString());
-			_db = _client.GetDatabase(ConfigurationManager.AppSettings["MongoDbName"].ToString());
-			_collection = _db.GetCollection<T>(collectionName);
+        public static void Config(string mongoDbConnection, string mongoDbName)
+        {
+            MongoManager.mongoDbConnection = mongoDbConnection;
+            MongoManager.mongoDbName = mongoDbName;
+        }
 
-			return _collection;
-		}
-	}
+        public static IMongoCollection<T> open<T>(string collectionName) where T : class
+        {
+            _client = new MongoClient(mongoDbConnection);
+            _db = _client.GetDatabase(mongoDbName);
+
+            return _db.GetCollection<T>(collectionName);
+        }
+    }
 }

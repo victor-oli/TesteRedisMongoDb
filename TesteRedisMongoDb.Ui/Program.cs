@@ -15,9 +15,9 @@ namespace TesteRedisMongoDb.Ui
 
 			if (galaxy8NaMemoria == null)
 			{
-				var c = new MongoManager<Produto>().open("Produto");
+				var collection = new MongoManager<Produto>().open("Produto");
 
-				galaxy8NoMongo = c.Find(x => x.Nome.Equals("Galaxy 8")).FirstOrDefault();
+				galaxy8NoMongo = collection.Find(x => x.Nome.Equals("Galaxy 8")).FirstOrDefault();
 
 				galaxy8NaMemoria = new ProdutoInMemory
 				{
